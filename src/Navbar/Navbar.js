@@ -1,15 +1,16 @@
 import React, {Suspense} from "react";
 import {Container, Image, Nav, Navbar, Offcanvas} from "react-bootstrap";
-const StoreNavbar = React.lazy(() => import("./Store/StoreNavbar"));
-const Authorization = React.lazy(() => import("./Account/Authorization"));
-import "./Navbar.css";
+const StoreNavbar = React.lazy(() => import("../Store/StoreNavbar"));
+const Authorization = React.lazy(() => import("../Account/Authorization"));
+import "./style.css";
+import logo from "./logo.png";
 
 const Header = () => {
     return (
         <Container className="bg-primary d-print-none" fluid>
             <Navbar variant="dark" expand="lg">
                 <Navbar.Brand href="/">
-                    <Image className="me-2" src="/static/logo.png" rel="ساحراندیشه" width={25} fluid />
+                    <Image className="me-2" src={logo} rel="ساحراندیشه" width={25} fluid />
                     ساحراندیشه
                 </Navbar.Brand>
                 <Navbar.Offcanvas>

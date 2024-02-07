@@ -1,5 +1,5 @@
 import React from "react";
-import {Modal, Form, Button, Row, Col, Table, Alert} from "react-bootstrap";
+import {Modal, Form, Button, Row, Col, Table, Alert, Image} from "react-bootstrap";
 import {useCookies} from "react-cookie";
 import {slugify} from "./Utils";
 
@@ -148,14 +148,14 @@ const Blogs = () => {
                     <Form.Control name="body" as="textarea" value={blog.body} onChange={handleChange} isInvalid={error.body} />
                     <Form.Control.Feedback type="invalid">{error.body}</Form.Control.Feedback>
                     <Row>
-                        <Col sm>
+                        <Col lg>
                             <Form.Label>عکس:</Form.Label>
                             <Form.Control type="file" id="image" onChange={upload} isInvalid={error.image} />
                             <Form.Control.Feedback type="invalid">{error.image}</Form.Control.Feedback>
                         </Col>
                         {blog.image ? (
                             <Col>
-                                <img className="w-100 rounded" src={"/media/" + blog.image} alt={blog.name} />
+                                <Image className="m-1" src={"/media/" + blog.image} rounded fluid />
                             </Col>
                         ) : null}
                     </Row>
@@ -166,12 +166,10 @@ const Blogs = () => {
                             <Form.Control.Feedback type="invalid">{error.keywords}</Form.Control.Feedback>
                         </div>
                         {blog.keywords ? (
-                            <div className="col">
-                                <div className="d-flex flex-wrap justify-content-center align-items-center">
-                                    {blog.keywords.split(", ").map((x, i) => (
-                                        <span className="bg-primary rounded m-1 p-1 text-light" key={i}>{x}</span>
-                                    ))}
-                                </div>
+                            <div className="col d-flex flex-wrap justify-content-center align-items-center">
+                                {blog.keywords.split(", ").map((x, i) => (
+                                    <span className="bg-primary rounded m-1 p-1 text-light" key={i}>{x}</span>
+                                ))}
                             </div>
                         ): null}
                     </div>

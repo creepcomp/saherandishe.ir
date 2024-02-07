@@ -34,7 +34,7 @@ const ProductPage = () => {
                             <Carousel>
                                 {product.images.map((x, i) => (
                                     <Carousel.Item key={i}>
-                                        <Image className="rounded" src={"/media/" + x} rel={product.name} fluid />
+                                        <Image src={"/media/" + x} rel={product.name} rounded fluid />
                                     </Carousel.Item>
                                 ))}
                             </Carousel>

@@ -240,7 +240,7 @@ const Products = () => {
                         </Tab>
                         <Tab title="عکس ها" eventKey="images">
                             {product.images ? product.images.map((x, i) => (
-                                <Image className='col-md-4 rounded m-1' key={i} src={"/media/" + x} fluid onClick={() => {
+                                <Image className='col-md-4 m-1' key={i} src={"/media/" + x} rounded fluid onClick={() => {
                                     const confirm = window.confirm("آیا میخواهید ادامه دهید؟ (پاک کردن)");
                                     if (confirm) {
                                         const images = product.images.filter((_, index) => index !== i);
@@ -301,12 +301,10 @@ const Products = () => {
                                     <Form.Control.Feedback type="invalid">{error.keywords}</Form.Control.Feedback>
                                 </div>
                                 {product.keywords ? (
-                                    <div className="col">
-                                        <div className="d-flex flex-wrap justify-content-center align-items-center">
-                                            {product.keywords.split(", ").map((x, i) => (
-                                                <span className="bg-primary rounded m-1 p-1 text-light" key={i}>{x}</span>
-                                            ))}
-                                        </div>
+                                    <div className="col d-flex flex-wrap justify-content-center align-items-center">
+                                        {product.keywords.split(", ").map((x, i) => (
+                                            <span className="bg-primary rounded m-1 p-1 text-light" key={i}>{x}</span>
+                                        ))}
                                     </div>
                                 ): null}
                             </div>

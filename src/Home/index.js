@@ -2,6 +2,7 @@ import React from "react";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import Products from "./Products";
 import Blogs from "./Blogs";
+import welcome from "./welcome.png";
 
 const Home = () => {
     React.useEffect(() => {
@@ -19,7 +20,7 @@ const Home = () => {
                         </div>
                     </Col>
                     <Col>
-                        <Image src={import("./welcome.png")} rel="ساحراندیشه" fluid />
+                        <Image src={welcome} rel="ساحراندیشه" fluid />
                     </Col>
                 </Row>
             </Container>

@@ -8,7 +8,7 @@ const BlogCard = (props) => {
     return (
         <a className="col-10 col-md-6 col-lg-3 m-1 text-center text-decoration-none" href={`/blog/${blog.id}/${blog.slug}`}>
             <Card className="shadow">
-                <Ratio aspectRatio="16x9">
+                <Ratio aspectRatio="4x3">
                     <Card.Img src={"/media/" + blog.image} alt={blog.title} />
                 </Ratio>
                 <Card.Body className="bg-primary bg-opacity-75 w-100 position-absolute bottom-0 p-1 text-light">
